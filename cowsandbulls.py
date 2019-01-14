@@ -16,8 +16,13 @@ for i in range(4):
 
 print(number)
 
+guesses = 0
 while True:
 	guess = input('Give me your best guess: ')
+	guesses += 1
+	if guess == number:
+		print('You guessed the correct number! It took you ' + str(guesses) + ' guesses.')
+		break
 	cowsandbulls = check(number, guess)
 	print("Cows: " + str(cowsandbulls[0]))
 	print("Bulls: " + str(cowsandbulls[1]))
